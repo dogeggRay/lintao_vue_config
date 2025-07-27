@@ -2,11 +2,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-    "@/*": ["src/*"],
-    "@components/*": ["src/components/*"],
-    "noUnusedLocals": false, // 禁用未使用本地变量检查
-    "noUnusedParameters": false // 禁用未使用参数检查
-    }
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"]
+    },
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
   },
   "files": [],
   "references": [

@@ -21,14 +21,16 @@
 </template>
 
 <script setup>
-import rollingImg from './components/rollingImg.vue'
-import hotsale from './components/hotsale.vue'
+import { defineComponent } from 'vue';
+import rollingImg from '@components/homepage/components/rollingImg.vue'
+import hotsale from '@components/homepage/components/hotsale.vue'
 import { ref } from 'vue'
 const value = ref('1')
 
 const onChange = (val) => {
   console.log('val', val)
 }
+
 </script>
 
 <style scoped>
