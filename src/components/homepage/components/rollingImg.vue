@@ -1,78 +1,110 @@
 <template>
-  <div class="demo-list" style="background-color: transparent;">
-    <nut-list :list-data="data" :container-height="470" @scroll-bottom="onScrollBottom">
-      <template #default="{ index }">
+  <nut-row>
+    <nut-col :span="12">
+      <div style="text-align:left"><nut-button size="small" type="default" shape="square" style="margin-right:10px">新增</nut-button></div>
+    </nut-col>
+  </nut-row>
+  <nut-row>
+    <nut-col :span="12">
+      <div class="table-header">轮播图</div>
+    </nut-col>
+    <nut-col :span="12">
+      <div class="table-header">操作</div>
+    </nut-col>
+  </nut-row>  
 
-        <div class="list-item" style="background: rgba(0, 0, 0, 0.8);color:white;">
-            <nut-row>
-                <nut-col :span="6">标题</nut-col>
-                <nut-col :span="18">
-                <div class="content">啊啊啊啊啊</div>
-                </nut-col>
-            </nut-row>
-            <nut-row >
-                <nut-col :span="6">跳转链接</nut-col>
-                <nut-col :span="18">
-                <div class="content" style="font-size: x-small;">https://img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24.jpg</div>
-                </nut-col>
-            </nut-row>
-            <nut-row class="img-row" style="">
-                <nut-col :span="6">滚动图</nut-col>
-                <nut-col :span="18" >
-                    <!-- <nut-uploader class="uploader" :url="url" v-model:file-list="defaultFileList" maximum="1" multiple></nut-uploader> -->
-                    <!-- <nut-image :src="url" height="150" fit="contain" position="left"/> -->
-                     <nut-uploader :url="uploadUrl" :data="formData" :headers="formData" :with-credentials="true"></nut-uploader>
-                </nut-col>
-            </nut-row>
-        </div>
-      </template>
-    </nut-list>
-  </div>
+  <!-- <nut-row :gutter="20">
+    <nut-col :span="4">
+      <div class="table-content"><nut-image src="https://img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24.jpg" height="50" fit="contain" position="left"/></div>
+    </nut-col>
+    <nut-col :span="8">
+      <div class="table-content">https://img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24.jpg</div>
+    </nut-col>
+    <nut-col :span="6">
+      <div class="table-content">热卖单品</div>
+    </nut-col>
+    <nut-col :span="6">
+      <div class="table-content">
+        <nut-button size="small" type="default" shape="square" style="margin-right:10px" @click="click">新增</nut-button>
+        <nut-button size="small" type="primary" shape="square">删除</nut-button></div>
+    </nut-col>
+  </nut-row > -->
+    <nut-row :gutter="20">
+    <nut-col :span="12">
+      <div class="table-content"><nut-image src="https://img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24.jpg" height="50" fit="contain" position="left"/></div>
+    </nut-col>
+    <nut-col :span="12">
+      <div class="table-content">
+        <nut-button size="small" type="default" shape="square" style="margin-right:10px" @click="click">查看</nut-button>
+        <nut-button size="small" type="primary" shape="square">删除</nut-button></div>
+    </nut-col>
+  </nut-row>
+
+
+
+
+
+
+
+
+
+  <nut-action-sheet v-model:visible="show" title="Title">
+    <nut-row>
+    <nut-col :span="24">
+      <div class="content">span:24</div>
+    </nut-col>
+  </nut-row>
+  <nut-row>
+    <nut-col :span="12">
+      <div class="content">span:12</div>
+    </nut-col>
+    <nut-col :span="12">
+      <div class="content light">span:12</div>
+    </nut-col>
+  </nut-row>
+  <nut-row>
+    <nut-col :span="8">
+      <div class="content">span:8</div>
+    </nut-col>
+    <nut-col :span="8">
+      <div class="content light">span:8</div>
+    </nut-col>
+    <nut-col :span="8">
+      <div class="content">span:8</div>
+    </nut-col>
+  </nut-row>
+  <nut-row>
+    <nut-col :span="6">
+      <div class="content">span:6</div>
+    </nut-col>
+    <nut-col :span="6">
+      <div class="content light">span:6</div>
+    </nut-col>
+    <nut-col :span="6">
+      <div class="content">span:6</div>
+    </nut-col>
+    <nut-col :span="6">
+      <div class="content">span:6</div>
+    </nut-col>
+  </nut-row>
+  </nut-action-sheet>  
 </template>
-<script setup lang="ts">
-import { ref, onMounted, reactive} from 'vue'
-
-const uploadUrl = 'https://lintao.raysvivi.com'
-const formData = {
-  custom: 'test'
-}
-
-const url = 'https://img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24.jpg'
-const defaultFileList = reactive([
-  {
-    name: '文件1.png',
-    url: 'https://img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24.jpg',
-    status: 'success',
-    message: '上传成功',
-    type: 'image'
-  }])
-
-const data = ref(new Array(5).fill(0))
-
-onMounted(() => {
-  data.value = data.value.map((_: number, index: number) => index + 1)
-})
-
-const onScrollBottom = () => {
-//   let arr = new Array(5).fill(0)
-//   const len = data.value.length
-//   data.value = data.value.concat(arr.map((_: number, index: number) => len + index + 1))
+<script setup>
+import { ref } from 'vue'
+const show = ref(false)
+const val = ref('')
+const click = () => {
+  show.value = true
 }
 </script>
-
-<style>
-
-.demo-list .list-item{
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  width: 100%;
-  margin-bottom: 10px;
-  background-color: white;
-  border-radius: 10px;
+<style scoped>
+.table-content{
+  font-size: x-small;
   text-align: left;
-
+  margin-bottom: 10px;
 }
-
-
+.table-header{
+  background-color: beige;
+  border:solid 1px black
+}
 </style>

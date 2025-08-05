@@ -3,6 +3,11 @@ import type {RouteRecordRaw} from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: '/',
+    name: 'root',
+    redirect:"/homepage",
+  }, 
+  {
     path: '/mainpage',
     name: 'mainpage',
     component: () => import(/* webpackChunkName: "login" */ '../components/main_page.vue'),

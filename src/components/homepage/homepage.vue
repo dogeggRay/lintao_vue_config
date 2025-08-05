@@ -1,11 +1,11 @@
 <template>
-  <div class="videoContainer ">
+  <!-- <div class="videoContainer ">
       <video class="fullscreenVideo" id="bgVid" playsinline="true" autoplay="true" muted="true" loop="true">
         <source src="@/background/background_wolp.mp4" type="video/mp4">
       </video>
-  </div>
+  </div> -->
 
-  <nut-tabs v-model="value" :animated-time="0"  style="background-color: transparent;">
+  <nut-tabs v-model="value" :animated-time="0" style="background-color: transparent;">
     <nut-tab-pane title="轮播图配置" pane-key="1" style="background-color: transparent;"> <rollingImg/></nut-tab-pane>
     <nut-tab-pane title="热卖商品配置" pane-key="2"><hotsale/></nut-tab-pane>
   </nut-tabs>
