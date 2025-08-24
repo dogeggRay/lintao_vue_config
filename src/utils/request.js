@@ -2,7 +2,8 @@ import axios from 'axios';
 
 // 创建 Axios 实例
 const service = axios.create({
-baseURL: 'http://lintao.raysvivi.com:8998', // 基础 URL
+// baseURL: 'http://lintao.raysvivi.com:8998', // 基础 URL
+baseURL: 'http://127.0.0.1:8998', // 基础 URL
 timeout: 5000, // 请求超时时间
 headers: {
 'Content-Type': 'application/json;charset=utf-8'

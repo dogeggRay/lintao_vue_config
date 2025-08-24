@@ -1,5 +1,6 @@
 <template>
-  <div class="demo-list" style="background-color: transparent;">
+  待开发
+  <!-- <div class="demo-list" style="background-color: transparent;">
     <nut-list :list-data="data" :container-height="470" @scroll-bottom="onScrollBottom">
       <template #default="{ index }">
 
@@ -19,15 +20,13 @@
             <nut-row class="img-row" style="">
                 <nut-col :span="6">滚动图</nut-col>
                 <nut-col :span="18" >
-                    <!-- <nut-uploader class="uploader" :url="url" v-model:file-list="defaultFileList" maximum="1" multiple></nut-uploader> -->
-                    <!-- <nut-image :src="url" height="150" fit="contain" position="left"/> -->
                      <nut-uploader :url="uploadUrl" :data="formData" :headers="formData" :with-credentials="true"></nut-uploader>
                 </nut-col>
             </nut-row>
         </div>
       </template>
     </nut-list>
-  </div>
+  </div> -->
 </template>
 <script setup lang="ts">
 import { ref, onMounted, reactive} from 'vue'
