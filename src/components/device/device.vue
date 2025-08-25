@@ -83,7 +83,7 @@ const device = reactive({
 
 const operationFlag = ref("ADD")
 const uploaderRegister = reactive({
-  url:"http://localhost:8998/api/file/uploadImgFile",
+  url:"https://lintao.raysvivi.com:8081/api/file/uploadImgFile",
 })
 
 const notifyState = {
@@ -183,7 +183,7 @@ const getDevicePage=()=>{
 const formSubmit = () =>{
   
   let submitUrl = '/api/device/updateOne'
-  if(operationFlag!="ADD"){
+  if(operationFlag.value!="ADD"){
     submitUrl = '/api/device/addOne'
   }
     service({
